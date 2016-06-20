@@ -1,0 +1,2 @@
+# command to crawl and put the output in json format. This overrides the old json file.
+scrapy crawl amazon -t json --nolog -o - > amazon.json
