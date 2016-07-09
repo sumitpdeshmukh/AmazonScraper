@@ -46,10 +46,10 @@ class AmazonSpider(scrapy.Spider):
             if(len(list_str) != i):
                 str += " > "           
         item['amazon_category'] = str
-		#print(response.xpath('//*[@id="reviewStarsLinkedCustomerReviews"]/i/span/text()').extract())  #Working
-		#str = response.xpath('//*[@id="reviewStarsLinkedCustomerReviews"]/i/span/text()').extract() #Not working
-		#str = re.sub(r'\W','',str[0]).strip(' \t\n\r')
-		#item['review_stars'] = str
+        #print(response.xpath('//*[@id="reviewStarsLinkedCustomerReviews"]/i/span/text()').extract())  #Working
+        str = response.xpath('//*[@id="reviewStarsLinkedCustomerReviews"]/i/span/text()').extract() #Not working
+        str = str[0].strip(' \t\n\r')
+        item['review_stars'] = str
         #print(response.xpath('//a[@class="a-link-normal a-color-tertiary"]/text()').extract())
         #print(response.xpath('//span[@id="detail-bullets"]/text()').extract())
         yield item

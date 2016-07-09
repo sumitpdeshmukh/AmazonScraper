@@ -19,4 +19,5 @@ class AmazonItem(scrapy.Item):
     item_origin = scrapy.Field()
     item_ASIN = scrapy.Field()
     item_rank = scrapy.Field()
+    review_stars = scrapy.Field()
     amazon_category = scrapy.Field()
